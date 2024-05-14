@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "./herroBanner.css";
+import "./heroBanner.css";
 
 export default function HeroBanner() {
   return (
