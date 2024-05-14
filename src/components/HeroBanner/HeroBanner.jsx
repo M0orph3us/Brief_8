@@ -1,7 +1,7 @@
 import Image from "next/image";
-import "./heroBanner.css";
+import "./herroBanner.css";
 
-export default function HeroBanner(props) {
+export default function HeroBanner() {
   return (
     <>
       <Image

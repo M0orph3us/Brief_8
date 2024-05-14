@@ -4,7 +4,7 @@ import "./navbar.css";
 
 export default function Navbar() {
   return (
-    <navbar>
+    <>
       <div className="navbar-mobile"></div>
       <div className="navbar-desktop">
         <Image
@@ -27,6 +27,6 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
-    </navbar>
+    </>
   );
 }
