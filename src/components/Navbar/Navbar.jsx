@@ -1,10 +1,10 @@
-import "./navbar.css";
+import Link from "next/link";
 import Image from "next/image";
-// import LogoDesktop from "../../../public/imgs/Logo_desktop.webp";
+import "./navbar.css";
 
 export default function Navbar() {
   return (
-    <header>
+    <navbar>
       <div className="navbar-mobile"></div>
       <div className="navbar-desktop">
         <Image
@@ -15,7 +15,18 @@ export default function Navbar() {
           alt="logo"
           priority={true}
         />
+        <ul>
+          <li>
+            <Link href=""></Link>
+          </li>
+          <li>
+            <Link href=""></Link>
+          </li>
+          <li>
+            <Link href=""></Link>
+          </li>
+        </ul>
       </div>
-    </header>
+    </navbar>
   );
 }
