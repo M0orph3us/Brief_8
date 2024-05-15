@@ -1,35 +1,36 @@
+"use client";
+
 import ReactCaroussel from "react-caroussel";
 import "react-caroussel/dist/index.css";
 import Image from "next/image";
 import "./caroussel.css";
 
-export default function Caroussel({ data }) {
-  console.log(data);
-  // return (
-  //   <>
-  //     <ReactCaroussel
-  //       slidesToShow={3}
-  //       slidesToScroll={3}
-  //       infinite={true}
-  //       autoplay={false}
-  //       speed={2} // 2s: speed of autoplay
-  //       display={{
-  //         arrows: true,
-  //         dots: true,
-  //       }}
-  //     >
-  //       {props.map((img, k) => (
-  //         <Image
-  //           key={k}
-  //           className="img-caroussel"
-  //           src={`/imgs/${img}`}
-  //           width={200}
-  //           height={113}
-  //           alt="image carousel"
-  //           priority={true}
-  //         />
-  //       ))}
-  //     </ReactCaroussel>
-  //   </>
-  // );
+export default function Caroussel({ results }) {
+  return (
+    <>
+      <ReactCaroussel
+        slidesToShow={4}
+        slidesToScroll={1}
+        infinite={true}
+        autoplay={true}
+        speed={5} // 2s: speed of autoplay
+        display={{
+          arrows: false,
+          dots: true,
+        }}
+      >
+        {results.map((result, k) => (
+          <Image
+            key={k}
+            className="img-caroussel"
+            src={`https://image.tmdb.org/t/p/w500${result["backdrop_path"]}`}
+            width={200}
+            height={113}
+            alt={`image of ${result["title"]}`}
+            priority={true}
+          />
+        ))}
+      </ReactCaroussel>
+    </>
+  );
 }
