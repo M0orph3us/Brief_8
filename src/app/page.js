@@ -10,10 +10,14 @@ export default async function Home() {
   const upComing = await getUpcomingMovies();
   return (
     <>
-      <HeroBanner />
-      <Caroussel results={topRated.results} />
-      <Caroussel results={popular.results} />
-      <Caroussel results={upComing.results} />
+      <header>
+        <HeroBanner />
+      </header>
+      <main>
+        <Caroussel title="Top Rated" results={topRated.results} />
+        <Caroussel title="Popular" results={popular.results} />
+        <Caroussel title="Up Comming" results={upComing.results} />
+      </main>
     </>
   );
 }
