@@ -1,19 +1,19 @@
 import Image from "next/image";
 import "./heroBanner.css";
-import { getUpcomingMovies } from "@/server/upcomingMovies";
+import { getPopularMovies } from "@/server/popularMovies";
 
 export default async function HeroBanner() {
-  const upcomming = await getUpcomingMovies();
-  const upcommingResults = upcomming.results[0];
+  const popularMovie = await getPopularMovies();
+  const mostPopular = popularMovie.results[0];
   return (
     <>
       <Image
         className="img-banner"
-        src={`https://image.tmdb.org/t/p/w500${upcommingResults["backdrop_path"]}`}
-        width={200}
-        height={113}
+        src={`https://image.tmdb.org/t/p/original${mostPopular["backdrop_path"]}`}
+        width={500}
+        height={300}
         quality={100}
-        alt={`image of ${upcommingResults["title"]}`}
+        alt={`image of ${mostPopular["title"]}`}
         priority={true}
       />
     </>

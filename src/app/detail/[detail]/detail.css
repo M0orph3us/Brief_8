@@ -1,9 +1,9 @@
 .detail-container {
   h1 {
     text-align: center;
+    margin-block: 20px;
   }
   img {
-    width: 100%;
-    height: auto;
+    margin-inline: auto;
   }
 }

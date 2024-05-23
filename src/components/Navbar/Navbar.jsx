@@ -17,13 +17,13 @@ export default function Navbar() {
         />
         <ul>
           <li>
-            <Link href=""></Link>
+            <Link href="/popular/">Popular</Link>
           </li>
           <li>
-            <Link href=""></Link>
+            <Link href="/topRated/">Top Rated</Link>
           </li>
           <li>
-            <Link href=""></Link>
+            <Link href="/upComming/">Up Comming</Link>
           </li>
         </ul>
       </div>
