@@ -7,14 +7,17 @@ export default function Navbar() {
     <>
       <div className="navbar-mobile"></div>
       <div className="navbar-desktop">
-        <Image
-          className="logo-desktop"
-          src="/imgs/Logo_desktop.webp"
-          width={200}
-          height={113}
-          alt="logo"
-          priority={true}
-        />
+        <Link href="/">
+          <Image
+            className="logo-desktop"
+            src="/imgs/Logo_desktop.webp"
+            width={200}
+            height={113}
+            alt="logo"
+            priority={true}
+          />
+        </Link>
+
         <ul>
           <li>
             <Link href="/popular/">Popular</Link>
@@ -24,6 +27,9 @@ export default function Navbar() {
           </li>
           <li>
             <Link href="/upComming/">Up Comming</Link>
+          </li>
+          <li>
+            <Link href="/my-favorites/">My Favorites</Link>
           </li>
         </ul>
       </div>

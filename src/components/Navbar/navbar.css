@@ -1,1 +1,16 @@
-
+.navbar-desktop {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  ul {
+    display: flex;
+    column-gap: 50px;
+    li {
+      a {
+        color: aqua;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  }
+}

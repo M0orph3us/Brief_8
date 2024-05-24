@@ -1,25 +1,30 @@
-import { useState, useFormState } from "react";
+"use client";
+import { useEffect, useState } from "react";
+import { searchMovie } from "@/server/searchMovie";
 import "./search.css";
-import Button from "../Button/Button";
 
 export default function Search() {
-  const [inputValue, setInputValue] = useState("");
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
+  const [value, setValue] = useState("");
+  function handleSearch(inputValue) {
+    setValue(inputValue);
+  }
+  useEffect(() => {
+    if (value) {
+      searchMovie(value);
+    }
+  }, [value]);
 
   return (
-    <form className="search-form" action={searchMovie}>
-      <label htmlFor="search-movie"></label>
+    <div className="search-form">
+      <label htmlFor="search-movie">Search : </label>
       <input
         type="text"
         id="search-movie"
         name="search-movie"
-        value={inputValue}
-        onChange={handleInputChange}
+        onChange={(e) => {
+          handleSearch(e.target.value);
+        }}
       />
-      <Button type="submit" text="Search" id="btn-search" />
-    </form>
+    </div>
   );
 }
